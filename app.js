@@ -20,7 +20,7 @@ const commandFiles = fs.readdirSync('./commandes').filter(file => file.endsWith(
     
 client.on('ready', () => {
     client.user.setStatus('available') // Can be 'available', 'idle', 'dnd', or 'invisible'
-    client.user.setPresence({
+    client.user.setPresence({   //here, we set the bot's game status
         game: {
             name: `prefix = ` + prefix,
             type: 0
@@ -34,7 +34,8 @@ client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
+    const command = args.shift().toLowerCase(); 
+    // down there, are the command files links
 
     if (command === 'ping') {
         client.commands.get('ping').execute(message, args);
