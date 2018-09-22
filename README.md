@@ -1,5 +1,5 @@
 # Discord_Bot_Billy
-App.js is a Command handler. You can copy it, but in your commands folder, put "commandname.js" files only. Put your code in this file, and add theses two things to the command file : 
+App.js is a Command handler (and also the main file. You will find all the commands you linked to it so the bot can execute it). You can copy it, but in your commands folder, put "commandname.js" files only. Put your code in this file, and add theses two things to the command file : 
 
 `module.exports = {
     name: 'play',
