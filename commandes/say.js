@@ -3,7 +3,7 @@ module.exports = {
     name: 'say',
     description: 'say',
     execute(message) {
-
+    
 
          const {
              prefix,
