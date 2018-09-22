@@ -26,6 +26,7 @@ else if (command === 'commandname') {
 		client.commands.get('commandname').execute(message, args);
 }
 ```
-
+_test_
 
 ***This file will recieve modifications***
+for more information on how to create a discord bot, visit https://discordjs.guide and https://discord.js.org.
