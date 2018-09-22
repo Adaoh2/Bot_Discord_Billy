@@ -12,14 +12,23 @@ const commandFiles = fs.readdirSync('./commandes').filter(file => file.endsWith(
     for (const file of commandFiles) {
     const command = require(`./commandes/${file}`);
 
+
     // set a new item in the Collection
     // with the key as the command name and the value as the exported module
     client.commands.set(command.name, command);
 }
-
+    
 client.on('ready', () => {
-    console.log('Ready!');
+    client.user.setStatus('available') // Can be 'available', 'idle', 'dnd', or 'invisible'
+    client.user.setPresence({
+        game: {
+            name: `prefix = ` + prefix,
+            type: 0
+        }
+    });
 });
+    console.log('Ready!');
+
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -43,6 +52,13 @@ client.on('message', message => {
     client.commands.get('leave').execute(message, args);
     }
 
+    if (command === 'search') {
+        client.commands.get('search').execute(message, args);
+    }
+
+    if (command === 'help') {
+        client.commands.get('help').execute(message, args);
+    }
 
     // other commands...
 

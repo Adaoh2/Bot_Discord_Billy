@@ -7,10 +7,8 @@ module.exports = {
         const { prefix, token } = require('./config.json');
         const args = message.content.slice(prefix.length).split(/ +/);
         const command = args.shift().toLowerCase();
-
+        const streamOptions = { seek: 0, volume: 1 };
         const ytdl = require('ytdl-core');
-
-            console.log(message.author)
 
         //verifie si la personne est dans un salon vocal
         if (!message.member.voiceChannel) {
@@ -39,17 +37,38 @@ module.exports = {
         }
 
         //info de la video
-        let info = ytdl.getInfo(args[0]);
+  //      let info = ytdl.getInfo(args[0]);
 
-        let connection = message.member.voiceChannel.join();
+        // connection est un objet de type VoiceConnection
+        //let connection = message.member.voiceChannel.join().then(connection => console.log('Connected!')).catch(console.error);
+        let voiceConnection = message.member.voiceChannel.join()
+        .then(voiceConnection => {
+        const stream = ytdl(args[0], { filter : 'audioonly' });
+        const streamDispatcher = voiceConnection.playStream(stream, streamOptions);
+        })
+        .catch(console.error);
 
         //jouer la musique
-        let dispatcher = connection.play(ytdl(args[0], {
+      /*  let dispatcher = connection.Play(ytdl(args[0], {
             filter: "audioonly"
         }));
+        */
+  //////////////////////////////////////////////////////////////////////////////////////      
+        const id  = args[0];
 
+ytdl.getInfo(id, (err, info) => {
+  if (err) throw err;
+/*  console.log('title:', info.title);
+  console.log('rating:', info.average_rating);
+  console.log('uploaded by:', info.author.name);
+});
+*/
+/////////////////////////////////////////////////////////*/*/*/*/*/*//////////////
         //musique qui joue
-        message.channel.send("Musique qui joue en ce moment: ${info.title}")
+        message.channel.send("** Musique qui joue en ce moment : ** " + info.title)
+        });   
+    
+        message.delete().catch(O_o => {});
 
     },
 };
