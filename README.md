@@ -29,4 +29,3 @@ else if (command === 'commandname') {
 
 ***This file will recieve modifications***
 for more information on how to create a discord bot, visit https://discordjs.guide and https://discord.js.org.
-_*test*_
