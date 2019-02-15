@@ -53,10 +53,6 @@ client.on('message', message => {
     client.commands.get('leave').execute(message, args);
     }
 
-    if (command === 'search') {
-        client.commands.get('search').execute(message, args);
-    }
-
     if (command === 'help') {
         client.commands.get('help').execute(message, args);
     }
