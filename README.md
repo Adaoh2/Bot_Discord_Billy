@@ -1,4 +1,4 @@
-# DO NOT FORGET TO CHANGE THE TOKEN IN THE CONFIG.js FILE OR THE BOT WILL NOT WORK
+# DO NOT FORGET TO CHANGE THE TOKEN IN THE CONFIG.json FILE OR THE BOT WILL NOT WORK
 
 # Discord_Bot_Billy
 `App.js` is a Command handler file. (and also the main file. You will find all the commands you linked to it so the bot can execute it). You can copy it, but in your commands folder, put `commandname.js`  files only. (you can name commandfile however you want, but it NEEDS the `.js` a the end) Put your code in the file you just created, and add theses two blocks of code to the `commandname` file : 
