@@ -16,6 +16,20 @@ Here, you put your custom code.
 ```
 And this block goes a the end of the code
 
+So the final command file should look like this :
+
+```
+module.exports = {  //this is the first block
+	name: 'ping',
+	description: 'Ping!', //You replace the 'ping' by your commandname.
+	execute(message) {         
+
+		message.channel.send('Pong.'); //your code
+
+	}, //end of the code
+};
+```
+
 You also need to add the following to the app.js or whatever you called your main bot file.
 ```
 if (command === 'commandname') {
