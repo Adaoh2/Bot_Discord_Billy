@@ -7,15 +7,13 @@ module.exports = {
     name: 'commandname',
     description: 'commandname',
     execute(message) {
-```
-This block goes first
-
-Here, you put your custom code.
-
-```
+    //
+    // 	Here, you put your custom code.
+    //
     },
 };
 ```
+
 And this block goes a the end of the code
 
 So the final command file should look like this :
