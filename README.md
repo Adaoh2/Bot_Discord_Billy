@@ -7,9 +7,9 @@ module.exports = {
     name: 'commandname',
     description: 'commandname',
     execute(message) {
-    //
+    
     // 	Here, you put your custom code.
-    //
+    
     },
 };
 ```
